@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Track focus</title>
+    </head>
+    <header>
+        <a href="/">Home</a>
+    </header>
+    <h1>Track focus</h1>
+    <body>
+        <!-- make radio button choices -->
+        <form action="/track_focus" method="post">
+            <button type="submit" name="button1" value="add">Add</button>
+            <button type="submit" name="button1" value="subs">Substract</button>
+        </form>
+        <!-- check if button1 exists -->
+        {% if status == "add" %}
+        <p>Which pelabuhan needs more travels?</p>
+        {% endif %} {% if status == "subs" %}
+        <p>Which pelabuhan needs less travels?</p>
+        {% endif %} {% if pelabuhan %}
+        <p>{{pelabuhan}}</p>
+        {% endif %}
+    </body>
+</html>

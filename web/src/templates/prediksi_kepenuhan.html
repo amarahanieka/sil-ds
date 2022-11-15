@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Prediksi kepenuhan</title>
-  </head>
-  <header>
-    <a href="/">Home</a>
-  </header>
-  <h1>Dataset</h1>
-  <body>
-    <form action="/prediksi_kepenuhan" method="post">
-      <label for="date">Tanggal:</label>
-      <input type="date" id="date" name="date" />
-      <input type="submit" value="Submit" />
-    </form>
-    <!-- check if day, month, year exists -->
-    {% if day and month and year %}
-    <p>Prediksi untuk tanggal: {{ day }} {{ month }} {{ year }}</p>
-    {% endif %} {% if season %}
-    <p>Hasil prediksi: {{ season }}</p>
-    {% endif %}
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Prediksi kepenuhan</title>
+    </head>
+    <header>
+        <a href="/">Home</a>
+    </header>
+    <h1>Prediksi kepenuhan per tanggal</h1>
+    <body>
+        <form action="/prediksi_kepenuhan" method="post">
+            <label for="date">Tanggal:</label>
+            <input type="date" id="date" name="date" />
+            <input type="submit" value="Submit" />
+        </form>
+        <!-- check if day, month, year exists -->
+        {% if day and month and year %}
+        <p>Prediksi untuk tanggal: {{ day }} {{ month }} {{ year }}</p>
+        {% endif %} {% if season %}
+        <p>Travel traffic: {{ season }}</p>
+        {% endif %}
+    </body>
 </html>
