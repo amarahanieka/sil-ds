@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dataset</title>
+  </head>
+  <header>
+    <a href="/">Home</a>
+  </header>
+  <h1>Dataset</h1>
+  <body>
+    {% for table in tables %} {{ table|safe }} {% endfor %}
+  </body>
+</html>
