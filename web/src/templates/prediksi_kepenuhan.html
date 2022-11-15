@@ -9,11 +9,16 @@
   </header>
   <h1>Dataset</h1>
   <body>
-    <!-- make date input -->
     <form action="/prediksi_kepenuhan" method="post">
       <label for="date">Tanggal:</label>
       <input type="date" id="date" name="date" />
       <input type="submit" value="Submit" />
     </form>
+    <!-- check if day, month, year exists -->
+    {% if day and month and year %}
+    <p>Prediksi untuk tanggal: {{ day }} {{ month }} {{ year }}</p>
+    {% endif %} {% if season %}
+    <p>Hasil prediksi: {{ season }}</p>
+    {% endif %}
   </body>
 </html>
