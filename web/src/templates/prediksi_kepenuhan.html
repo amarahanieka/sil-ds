@@ -3,10 +3,11 @@
     <head>
         <meta charset="UTF-8" />
         <title>Prediksi kepenuhan</title>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/main.css') }}"
+        />
     </head>
-    <header>
-        <a href="/">Home</a>
-    </header>
     <h1>Prediksi kepenuhan per tanggal</h1>
     <body>
         <form action="/prediksi_kepenuhan" method="post">
@@ -14,11 +15,19 @@
             <input type="date" id="date" name="date" />
             <input type="submit" value="Submit" />
         </form>
-        <!-- check if day, month, year exists -->
-        {% if day and month and year %}
-        <p>Prediksi untuk tanggal: {{ day }} {{ month }} {{ year }}</p>
-        {% endif %} {% if season %}
-        <p>Travel traffic: {{ season }}</p>
-        {% endif %}
+        <div class="result">
+            {% if day and month and year %}
+            <p>
+                <b>Prediksi untuk tanggal:</b> {{ day }} {{ month }} {{ year }}
+            </p>
+            {% else %}
+            <p>Pilih tanggal yang ingin di cek dan klik <b>Submit</b></p>
+            {% endif %} {% if season %}
+            <p><b>Traffic:</b> {{ season }} <i>season</i></p>
+            {% endif %}
+        </div>
     </body>
+    <footer>
+        <div id="homebutton"><a href="/">Home</a></div>
+    </footer>
 </html>

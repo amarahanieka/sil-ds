@@ -1,0 +1,73 @@
+/* set inter font for all components */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* main */
+h1 {
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #154c79;
+  /* put it in the middle */
+  text-align: center;
+}
+
+h3 {
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-style: oblique;
+  text-align: center;
+  color: gray;
+}
+
+form {
+  /* align to center */
+  text-align: center;
+}
+
+form button {
+  background-color: #154c79;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+}
+
+.result {
+  text-align: center;
+  margin: 10px;
+  background-color: #d6d6d6;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+p {
+  margin: 0;
+}
+
+/* footer */
+footer {
+  width: 100%;
+  opacity: .9;
+  margin-bottom: 10px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+}
+
+footer #homebutton {
+  background-color: #eab676;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+footer #homebutton a {
+  /* remove decoration, change white */
+  text-decoration: none;
+  color: white;
+}

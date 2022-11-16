@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Dataset</title>
-  </head>
-  <header>
-    <a href="/">Home</a>
-  </header>
-  <h1>Dataset</h1>
-  <body>
-    {% for table in tables %} {{ table|safe }} {% endfor %}
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Dataset</title>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/main.css') }}"
+        />
+    </head>
+    <h1>Dataset</h1>
+    <body>
+        {% for table in tables %} {{ table|safe }} {% endfor %}
+    </body>
+    <footer>
+        <div id="homebutton"><a href="/">Home</a></div>
+    </footer>
 </html>

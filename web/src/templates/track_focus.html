@@ -3,24 +3,34 @@
     <head>
         <meta charset="UTF-8" />
         <title>Track focus</title>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/main.css') }}"
+        />
     </head>
-    <header>
-        <a href="/">Home</a>
-    </header>
     <h1>Track focus</h1>
     <body>
-        <!-- make radio button choices -->
         <form action="/track_focus" method="post">
             <button type="submit" name="button1" value="add">Add</button>
             <button type="submit" name="button1" value="subs">Substract</button>
         </form>
-        <!-- check if button1 exists -->
-        {% if status == "add" %}
-        <p>Which pelabuhan needs more travels?</p>
-        {% endif %} {% if status == "subs" %}
-        <p>Which pelabuhan needs less travels?</p>
-        {% endif %} {% if pelabuhan %}
-        <p>{{pelabuhan}}</p>
-        {% endif %}
+        <div class="result">
+            {% if status == None %}
+            <p>
+                Klik <b>Add</b> untuk melihat perjalanan yang perlu ditambahkan
+                dari pelabuhan atau <b>Substract</b> untuk melihat perjalanan
+                yang perlu dikurangi dari pelabuhan.
+            </p>
+            {% endif %} {% if status == "add" %}
+            <p><b>Which harbor needs more travels?</b></p>
+            {% endif %} {% if status == "subs" %}
+            <p><b>Which harbor needs less travels?</b></p>
+            {% endif %} {% if pelabuhan %}
+            <p>{{', '.join(pelabuhan)}}</p>
+            {% endif %}
+        </div>
     </body>
+    <footer>
+        <div id="homebutton"><a href="/">Home</a></div>
+    </footer>
 </html>
