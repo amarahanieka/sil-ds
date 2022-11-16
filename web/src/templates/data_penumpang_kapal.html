@@ -9,10 +9,12 @@
         />
     </head>
     <h1>Dataset</h1>
-    <body>
-        {% for table in tables %} {{ table|safe }} {% endfor %}
-    </body>
     <footer>
         <div id="homebutton"><a href="/">Home</a></div>
     </footer>
+    <body>
+        <div class="datatable">
+            {% for table in tables %} {{ table|safe }} {% endfor %}
+        </div>
+    </body>
 </html>
